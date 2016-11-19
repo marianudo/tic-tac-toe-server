@@ -12,7 +12,7 @@ import scala.concurrent.{ExecutionContext, Future}
 /**
   *
   */
-trait GameRepository {
+private[logic] trait GameRepository {
     def insertGame(game: Game): Future[Unit]
 
     def gameById(id: GameId): Future[Option[Game]]
@@ -25,7 +25,7 @@ trait GameRepository {
 }
 
 
-object GameRepository {
+private[tictactoe] object GameRepository {
 
     def apply(mongoURI: String)(implicit ec: ExecutionContext, timeout: Timeout): Future[GameRepository] = {
         val driver = MongoDriver()
