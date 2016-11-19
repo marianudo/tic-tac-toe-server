@@ -41,9 +41,22 @@ case object UnknownGameState extends InvalidGameState {
 
 case class GridStateEntry(position: GridPosition, player: Player)
 
-/**
-  *
-  */
+case class Players(player1: Player, player2: Player) {
+    def contains(player: Player): Boolean =
+        player == player1 || player == player2
+}
+
+
+/*
+ * ADT for the result of a create game operation
+ */
+sealed trait GameCreationResult
+
+case class GameCreated(gameId: GameId) extends GameCreationResult
+
+case class PlayersAlreadyInAGame(players: Players) extends GameCreationResult
+
+
 case class Game
 (
     id: GameId,
@@ -60,3 +73,5 @@ object Game {
     type Points = Int
     type Player = String
 }
+
+case class LeaderBoard(player: Player, points: Long)
