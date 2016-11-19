@@ -18,7 +18,7 @@ import scala.language.implicitConversions
 /**
   * Trait that defines the interface for the business logic
   */
-trait GameLogic {
+private[tictactoe] trait GameLogic {
     def createGame(players: Players): Future[GameCreationResult]
 
     def move(gameId: GameId, player: Player, targetPosition: GridPosition): Future[MoveResult]
@@ -286,7 +286,7 @@ private class ActorsBasedGameLogic
         gameRepository.findTop10LeaderBoard()
 }
 
-object GameLogic {
+private[tictactoe] object GameLogic {
     def apply(gameRepository: GameRepository)(implicit actorSystem: ActorSystem, akkaTimeout: Timeout): GameLogic =
         new ActorsBasedGameLogic(gameRepository)
 }

@@ -7,13 +7,13 @@ import me.marianonavas.tictactoe.logic.Game.Player
   * will be used to represent those possible positions. This way we enforce compile time checking of the game grid
   * positions and avoid the need of parameter validations and their testing.
   */
-sealed trait GridCoordinate
+private[tictactoe] sealed trait GridCoordinate
 
-object First extends GridCoordinate
+private[tictactoe] object First extends GridCoordinate
 
-object Center extends GridCoordinate
+private[tictactoe] object Center extends GridCoordinate
 
-object Last extends GridCoordinate
+private[tictactoe] object Last extends GridCoordinate
 
 /**
   * Represents a coordinate inside the game 3X3 grid
@@ -21,7 +21,7 @@ object Last extends GridCoordinate
   * @param x The x coordinate.
   * @param y The y coordinate.
   */
-case class GridPosition(x: GridCoordinate, y: GridCoordinate)
+private[tictactoe] case class GridPosition(x: GridCoordinate, y: GridCoordinate)
 
 /*
   * Class that represents the state of the grid (therefore the current state of the game)
