@@ -12,3 +12,11 @@ object First extends GridCoordinate
 object Center extends GridCoordinate
 
 object Last extends GridCoordinate
+
+/**
+  * Represents a coordinate inside the game 3X3 grid
+  *
+  * @param x The x coordinate.
+  * @param y The y coordinate.
+  */
+case class GridPosition(x: GridCoordinate, y: GridCoordinate)
