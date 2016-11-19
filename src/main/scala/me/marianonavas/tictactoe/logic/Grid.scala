@@ -1,4 +1,4 @@
-package me.marianonavas.tictactoe
+package me.marianonavas.tictactoe.logic
 
 /*
   * Given that the number of possible positions inside the game grid is limited and small an algebraic data type (ADT)
