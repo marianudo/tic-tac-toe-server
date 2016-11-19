@@ -5,4 +5,4 @@ import io.dropwizard.Configuration
 /**
   *
   */
-class NoughtsConfiguration extends Configuration
+private[tictactoe] class NoughtsConfiguration extends Configuration

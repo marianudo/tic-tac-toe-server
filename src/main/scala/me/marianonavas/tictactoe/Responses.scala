@@ -1,7 +1,7 @@
 package me.marianonavas.tictactoe
 
-case class GameCreatedResponse(gameId: String)
+private[tictactoe] case class GameCreatedResponse(gameId: String)
 
-case class GameStateResponse(winnerId: String, gameOver: Boolean)
+private[tictactoe] case class GameStateResponse(winnerId: String, gameOver: Boolean)
 
-case class ConflictResponse(cause: String)
+private[tictactoe] case class ConflictResponse(cause: String)

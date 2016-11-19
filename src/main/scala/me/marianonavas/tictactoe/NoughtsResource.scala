@@ -13,12 +13,12 @@ import scala.concurrent.duration._
   */
 // Requests; Have to be here to be properly deserialized by Jackson
 // (doesn't work if defined as an inner case class)
-case class MoveRequest(playerId: String, x: Int, y: Int)
+private[tictactoe] case class MoveRequest(playerId: String, x: Int, y: Int)
 
 @Path("/game")
 @Produces(Array(MediaType.APPLICATION_JSON))
 @Consumes(Array(MediaType.APPLICATION_JSON))
-class NoughtsResource(gameLogic: GameLogic) {
+private[tictactoe] class NoughtsResource(gameLogic: GameLogic) {
 
     private def conflictResponse(msg: String): Response =
         Response.status(Response.Status.CONFLICT)
